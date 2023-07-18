@@ -16,6 +16,7 @@ keymap.set("n", "<leader>fW", function()
         additional_args = function(args) return vim.list_extend(args, { "--hidden", "--no-ignore" }) end,
       }
     end)
+keymap.set("n", "<leader>fr", function() require("telescope.builtin").oldfiles() end)
 
 -- Packer
 keymap.set("n", "<leader>p", "<cmd>PackerSync<CR>")

@@ -51,8 +51,9 @@ end)
 vim.keymap.set('n', ';e', function()
   builtin.diagnostics()
 end)
-vim.keymap.set("n", "sf", function()
-  telescope.extensions.file_browser.file_browser({
+
+local function browse_files()
+    telescope.extensions.file_browser.file_browser({
     path = "%:p:h",
     cwd = telescope_buffer_dir(),
     respect_gitignore = false,
@@ -62,4 +63,14 @@ vim.keymap.set("n", "sf", function()
     initial_mode = "normal",
     layout_config = { height = 40 }
   })
-end)
+end
+
+vim.keymap.set("n", "sf", function()
+  browse_files()
+end) 
+
+vim.api.nvim_create_user_command("BrowseFiles",
+  function()
+    browse_files()
+  end,
+  {})
