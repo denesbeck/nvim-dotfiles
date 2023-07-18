@@ -41,7 +41,7 @@ end
 
 local userName = "Denes"
 local greeting = getGreeting(userName)
-dashboard.section.header.val = vim.split("\n\n\n\n" .. logo .. "\n" .. greeting, "\n")
+dashboard.section.header.val = vim.split("\n\n\n" .. logo .. "\n" .. greeting, "\n")
 
 -- Set menu
 dashboard.section.buttons.val = {
@@ -49,6 +49,7 @@ dashboard.section.buttons.val = {
   dashboard.button( "f", "  Find file", ":Telescope find_files<CR>"),        
   dashboard.button( "w", "󰷾  Find text", ":Telescope live_grep <CR>"),
   dashboard.button( "r", "  Recents", ":Telescope oldfiles<CR>"),
+  dashboard.button( "t", "  Themes", ":Telescope colorscheme<CR>"),
   dashboard.button( "e", "  Explore", ":BrowseFiles<CR>"),
   dashboard.button( "p", "󰏗  Packer", ":PackerSync<CR>"),
   dashboard.button( "m", "  Mason", ":Mason<CR>"),
