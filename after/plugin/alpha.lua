@@ -1,7 +1,9 @@
-local dashboard = require("alpha.themes.dashboard")
-local alpha = require("alpha")
+local alpha_ok, alpha = pcall(require, "alpha")
+if not alpha_ok then return end
 
--- Set header
+local dashboard_ok, dashboard = pcall(require, "alpha.themes.dashboard")
+if not dashboard_ok then return end
+
 local logo = [[
 
   ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
@@ -43,7 +45,6 @@ local userName = "Denes"
 local greeting = getGreeting(userName)
 dashboard.section.header.val = vim.split("\n\n\n" .. logo .. "\n" .. greeting, "\n")
 
--- Set menu
 dashboard.section.buttons.val = {
   dashboard.button( "n", "  New file", ":ene <BAR> startinsert <CR>"),
   dashboard.button( "f", "  Find file", ":Telescope find_files<CR>"),        

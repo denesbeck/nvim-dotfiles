@@ -1,8 +1,8 @@
-local ok1, mason = pcall(require, "mason")
-if (not ok1) then return end
+local mason_ok, mason = pcall(require, "mason")
+if (not mason_ok) then return end
 
-local ok2, lspconfig = pcall(require, "mason-lspconfig")
-if (not ok2) then return end
+local lspconfig_ok, lspconfig = pcall(require, "mason-lspconfig")
+if (not lspconfig_ok) then return end
 
 require("mason").setup({
   ui = {
