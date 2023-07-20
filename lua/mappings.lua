@@ -12,7 +12,7 @@ keymap.set("n", "<leader>p", "<cmd>PackerSync<CR>")
 keymap.set("n", "<leader>m", "<cmd>Mason<CR>")
 
 -- Close buffer
-keymap.set("n", "<leader>c", "<cmd>bd<CR>")
+keymap.set("n", "<leader>c", "<cmd>bw<CR>")
 
 -- Insert --
 -- Leave insert mode

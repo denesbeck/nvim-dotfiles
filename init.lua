@@ -3,4 +3,4 @@ require("options")
 require("plugins")
 require("mappings")
 
-vim.cmd("silent! colorscheme tokyonight-storm")
+vim.cmd("colorscheme tokyonight-storm")
