@@ -1,109 +1,105 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
-
-require("packer").startup({function(use)
-  -- Package management
-  use "wbthomason/packer.nvim"
-
+local plugins = {
   -- LSP
-  use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-  }
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+  "neovim/nvim-lspconfig",
 
   -- Theme
-  use {
+  {
     "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
     opts = {
       transparent=true,
       styles = {
           sidebars = "transparent",
           floats = "transparent",
       },
-    }
-  }
-
+    },
+    config = function()
+      vim.cmd([[colorscheme tokyonight]])
+    end,
+  },
+  
   -- Status bar
-  use "nvim-lualine/lualine.nvim"
+  "nvim-lualine/lualine.nvim",
 
   -- Fuzzy finder
-  use {
-    "nvim-telescope/telescope.nvim", tag = "0.1.2",
-    requires = { {"nvim-lua/plenary.nvim"} }
-  }
-  use {
+  {
+   "nvim-telescope/telescope.nvim", version = "0.1.2",
+   dependencies = { {"nvim-lua/plenary.nvim"} }
+  },
+
+  {
     "nvim-telescope/telescope-file-browser.nvim",
-    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-  }
+    dependencies = { {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"} }
+  },
 
   -- Buffers
-  use {"akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons"}
+  {"akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons"},
 
   -- Git
-  use "lewis6991/gitsigns.nvim"
+  "lewis6991/gitsigns.nvim",
 
   -- Syntax highlight
-  use "nvim-treesitter/nvim-treesitter"
-
-  -- Autoclose
-  use "windwp/nvim-ts-autotag"
-  use "windwp/nvim-autopairs"
+  "nvim-treesitter/nvim-treesitter",
   
+  -- Autoclose
+  "windwp/nvim-ts-autotag",
+  "windwp/nvim-autopairs",
+
   -- Autocomplete
   -- Tailwind CSS
-  use "js-everts/cmp-tailwind-colors"
+  "js-everts/cmp-tailwind-colors",
   
-  -- CMP
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-buffer"
-  use "hrsh7th/cmp-path"
-  use "hrsh7th/cmp-cmdline"
-  use "hrsh7th/nvim-cmp"
-  use "hrsh7th/cmp-vsnip"
-  use "hrsh7th/vim-vsnip"
+  -- CMP 
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-path",
+  "hrsh7th/cmp-cmdline",
+  "hrsh7th/cmp-vsnip",
+  "hrsh7th/vim-vsnip",
 
-  --LSP Saga
-  use "glepnir/lspsaga.nvim"
+  -- LSP Saga
+  "glepnir/lspsaga.nvim",
 
   -- Copilot
-  use "github/copilot.vim"
+  "github/copilot.vim",
 
   -- Formatters
-  use "jose-elias-alvarez/null-ls.nvim"
-  use "MunifTanjim/prettier.nvim"
+  "jose-elias-alvarez/null-ls.nvim",
+  "MunifTanjim/prettier.nvim",
 
   -- Home screen
-  use {
+  {
     'goolord/alpha-nvim',
     config = function ()
         require'alpha'.setup(require'alpha.themes.dashboard'.config)
     end
-  }
-
+  },
+   
   -- Comment
-  use { 'numToStr/Comment.nvim',
-    requires = {
-      'JoosepAlviste/nvim-ts-context-commentstring'
-    }
+  { 'numToStr/Comment.nvim',
+    dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' }
   }
+}
 
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end,
-config = {
-  display = {
-    open_fn = require('packer.util').float,
-  }
-}})
+local opts = {}
+
+require("lazy").setup(plugins, opts)
+
+
