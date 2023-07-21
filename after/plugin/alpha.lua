@@ -43,18 +43,30 @@ end
 
 local userName = "Denes"
 local greeting = getGreeting(userName)
-dashboard.section.header.val = vim.split("\n\n\n" .. logo .. "\n" .. greeting, "\n")
+dashboard.section.header.val = vim.split(logo .. "\n" .. greeting, "\n")
 
 dashboard.section.buttons.val = {
-  dashboard.button( "n", "  New file", ":ene <BAR> startinsert <CR>"),
   dashboard.button( "f", "  Find file", ":Telescope find_files<CR>"),        
   dashboard.button( "w", "󰷾  Find text", ":Telescope live_grep <CR>"),
   dashboard.button( "r", "  Recents", ":Telescope oldfiles<CR>"),
   dashboard.button( "t", "  Themes", ":Telescope colorscheme<CR>"),
   dashboard.button( "e", "  Explore", ":BrowseFiles<CR>"),
-  dashboard.button( "p", "󰏗  Packer", ":PackerSync<CR>"),
+  dashboard.button( "l", "󰏗  Lazy", ":Lazy<CR>"),
   dashboard.button( "m", "  Mason", ":Mason<CR>"),
   dashboard.button( "q", "  Quit", ":qa<CR>"),
 }
 
 alpha.setup(dashboard.opts)
+
+vim.api.nvim_create_autocmd("User", {
+        pattern = "LazyVimStarted",
+        callback = function()
+          local stats = require("lazy").stats()
+          local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+          local version = "  󰥱 v" .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
+          local plugins = "⚡Neovim loaded " .. stats.count .. " plugins in " .. ms .. "ms"
+          local footer = version .. "\t" .. plugins .. "\n"
+          dashboard.section.footer.val = footer
+          pcall(vim.cmd.AlphaRedraw)
+        end,
+})

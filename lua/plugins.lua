@@ -86,15 +86,15 @@ local plugins = {
 
   -- Home screen
   {
-    'goolord/alpha-nvim',
+    "goolord/alpha-nvim",
     config = function ()
-        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+        require"alpha".setup(require"alpha.themes.dashboard".config)
     end
   },
    
   -- Comment
-  { 'numToStr/Comment.nvim',
-    dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' }
+  { "numToStr/Comment.nvim",
+    dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" }
   }
 }
 
