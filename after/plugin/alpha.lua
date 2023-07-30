@@ -51,7 +51,7 @@ dashboard.section.buttons.val = {
   dashboard.button( "r", "  Recents", ":Telescope oldfiles<CR>"),
   dashboard.button( "t", "  Themes", ":Telescope colorscheme<CR>"),
   dashboard.button( "e", "  Explore", ":BrowseFiles<CR>"),
-  dashboard.button( "l", "󰏗  Lazy", ":Lazy<CR>"),
+  dashboard.button( "p", "󰏗  Lazy", ":Lazy<CR>"),
   dashboard.button( "m", "  Mason", ":Mason<CR>"),
   dashboard.button( "q", "  Quit", ":qa<CR>"),
 }
