@@ -36,6 +36,12 @@ set fish_greeting ""
 set --universal nvm_default_version v18.17.0
 nvm use default --silent
 
+# pyenv setup
+set -Ux PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
+
+pyenv init - | source
+
 # Aliases
 # NeoVim
 alias vi "nvim"
