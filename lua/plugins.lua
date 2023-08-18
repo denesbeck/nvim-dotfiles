@@ -95,7 +95,13 @@ local plugins = {
   -- Comment
   { "numToStr/Comment.nvim",
     dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" }
-  }
+  },
+
+  -- Hardtime
+  {
+   "m4xshen/hardtime.nvim",
+   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+  },
 }
 
 local opts = {}
