@@ -85,7 +85,7 @@ local plugins = {
   "MunifTanjim/prettier.nvim",
 
   -- Home screen
-  {
+ {
     "goolord/alpha-nvim",
     config = function ()
         require"alpha".setup(require"alpha.themes.dashboard".config)
@@ -93,15 +93,19 @@ local plugins = {
   },
    
   -- Comment
-  { "numToStr/Comment.nvim",
+  { 
+    "numToStr/Comment.nvim",
     dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" }
   },
 
   -- Hardtime
   {
-   "m4xshen/hardtime.nvim",
-   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
   },
+
+  -- NPM packages
+  "vuki656/package-info.nvim",
 }
 
 local opts = {}
