@@ -106,6 +106,9 @@ local plugins = {
 
   -- NPM packages
   "vuki656/package-info.nvim",
+
+  -- Notification
+  "rcarriga/nvim-notify",
 }
 
 local opts = {}

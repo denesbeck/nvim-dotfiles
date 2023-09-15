@@ -37,10 +37,14 @@ telescope.setup {
         },
       },
     },
+    notify = {
+      theme = "ivy",
+    },
   },
 }
 
 telescope.load_extension("file_browser")
+telescope.load_extension("package_info")
 
 vim.keymap.set("n", "<leader>ff", function()
   builtin.find_files()
@@ -65,9 +69,13 @@ end)
 vim.keymap.set("n", ";;", function()
   builtin.resume()
 end)
-vim.keymap.set("n", ";ft", function()
+vim.keymap.set("n", "<leader>ft", function()
   builtin.colorscheme()
 end)
+vim.keymap.set("n", "<leader>fn", function()
+  telescope.extensions.notify.notify()
+end)
+
 
 local function browse_files()
     telescope.extensions.file_browser.file_browser({
@@ -82,8 +90,12 @@ local function browse_files()
   })
 end
 
-vim.keymap.set("n", "sf", function()
+vim.keymap.set("n", "<leader>sf", function()
   browse_files()
+end) 
+
+vim.keymap.set("n", "<leader>pp", function()
+  telescope.extensions.package_info.package_info()
 end) 
 
 vim.api.nvim_create_user_command("BrowseFiles",
