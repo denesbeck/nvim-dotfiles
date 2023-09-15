@@ -26,6 +26,7 @@ nvim
 [ilancosman/tide@v5](https://github.com/IlanCosman/tide)\
 [jethrokuan/z](https://github.com/jethrokuan/z)\
 [jorgebucaran/nvm.fish](https://github.com/jorgebucaran/nvm.fish)\
+[rbenv/fish-rbenv](https://github.com/rbenv/fish-rbenv)\
 [patrickf1/fzf.fish](https://github.com/PatrickF1/fzf.fish)
 
 ### ~/.config/fish/config.fish
