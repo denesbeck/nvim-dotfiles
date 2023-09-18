@@ -4,7 +4,7 @@ if (not ok) then return end
 hardtime.setup {}
 
 local report = require("hardtime.report")
-local plugin = "Hardtime"
+local plugin = "hardtime"
 
 vim.notify = require("notify")
 vim.keymap.set('n', '<leader>htt', function()
