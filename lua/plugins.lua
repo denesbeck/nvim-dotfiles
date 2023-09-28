@@ -98,6 +98,9 @@ local plugins = {
 
   -- Notification
   "rcarriga/nvim-notify",
+
+  -- Tmux navigator
+  "christoomey/vim-tmux-navigator",
 }
 
 local opts = {}

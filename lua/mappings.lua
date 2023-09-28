@@ -23,16 +23,16 @@ keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
 
 -- Move window
 keymap.set('n', '<Space>', '<C-w>w')
-keymap.set('', '<C-h>', '<C-w>h')
-keymap.set('', '<C-k>', '<C-w>k')
-keymap.set('', '<C-j>', '<C-w>j')
-keymap.set('', '<C-l>', '<C-w>l')
+keymap.set('', '<C-h>', '<cmd>TmuxNavigateLeft<CR>')
+keymap.set('', '<C-k>', '<cmd>TmuxNavigateUp<CR>')
+keymap.set('', '<C-j>', '<cmd>TmuxNavigateDown<CR>')
+keymap.set('', '<C-l>', '<cmd>TmuxNavigateRight<CR>')
 
 -- Resize window
-keymap.set('n', '<C-S-h>', '<C-w><')
-keymap.set('n', '<C-S-l>', '<C-w>>')
-keymap.set('n', '<C-S-k>', '<C-w>+')
-keymap.set('n', '<C-S-j>', '<C-w>-')
+keymap.set('n', '<M-h>', '<C-w><')
+keymap.set('n', '<M-l>', '<C-w>>')
+keymap.set('n', '<M-k>', '<C-w>+')
+keymap.set('n', '<M-j>', '<C-w>-')
 
 -- Insert --
 -- Leave insert mode
