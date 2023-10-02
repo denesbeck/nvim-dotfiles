@@ -35,8 +35,8 @@ keymap.set('n', '<M-k>', '<C-w>+')
 keymap.set('n', '<M-j>', '<C-w>-')
 
 -- Close split
-keymap.set('n', '<leader>cc', '<C-w>c')
-keymap.set('n', '<leader>oo', '<C-w>o')
+keymap.set('n', '<leader>x', '<C-w>c')
+keymap.set('n', '<leader>q', '<C-w>o')
 
 -- Insert --
 -- Leave insert mode
