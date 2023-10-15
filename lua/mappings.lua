@@ -1,11 +1,7 @@
 local keymap = vim.keymap
 
 -- Normal --
--- Move lines
-keymap.set("n", "<C-j>", "<cmd>m .+1<CR>")
-keymap.set("n", "<C-k>", "<cmd>m .-2<CR>")
-
--- Lazy
+- Lazy
 keymap.set("n", "<leader>p", "<cmd>Lazy<CR>")
 
 -- Mason
