@@ -47,9 +47,6 @@ telescope.load_extension("file_browser")
 telescope.load_extension("package_info")
 
 vim.keymap.set("n", "<leader>ff", function()
-  builtin.find_files()
-end)
-vim.keymap.set("n", "<leader>fF", function()
   builtin.find_files { hidden = true, no_ignore = true }
 end)
 vim.keymap.set("n", "<leader>fw", function()
@@ -75,7 +72,15 @@ end)
 vim.keymap.set("n", "<leader>fn", function()
   telescope.extensions.notify.notify()
 end)
-
+vim.keymap.set("n", "<leader>gb", function()
+  builtin.git_branches()
+end)
+vim.keymap.set("n", "<leader>gc", function()
+  builtin.git_commits()
+end)
+vim.keymap.set("n", "<leader>gs", function()
+  builtin.git_status()
+end)
 
 local function browse_files()
     telescope.extensions.file_browser.file_browser({

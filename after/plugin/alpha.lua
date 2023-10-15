@@ -17,7 +17,7 @@ local logo = [[
 
 local function getGreeting(name)
         local tableTime = os.date("*t")
-        local datetime = os.date("  %Y-%m-%d   %H:%M:%S")
+        local datetime = os.date(" %Y-%m-%d   %H:%M:%S")
         local hour = tableTime.hour
         local greetingsTable = {
           [1] = "  Sleep well",
@@ -46,14 +46,14 @@ local greeting = getGreeting(userName)
 dashboard.section.header.val = vim.split(logo .. "\n" .. greeting, "\n")
 
 dashboard.section.buttons.val = {
-  dashboard.button( "f", "  Find file", ":Telescope find_files<CR>"),        
-  dashboard.button( "w", "󰷾  Find text", ":Telescope live_grep <CR>"),
-  dashboard.button( "r", "  Recents", ":Telescope oldfiles<CR>"),
-  dashboard.button( "t", "  Themes", ":Telescope colorscheme<CR>"),
-  dashboard.button( "e", "  Explore", ":BrowseFiles<CR>"),
-  dashboard.button( "p", "󰏗  Lazy", ":Lazy<CR>"),
-  dashboard.button( "m", "  Mason", ":Mason<CR>"),
-  dashboard.button( "q", "  Quit", ":qa<CR>"),
+  dashboard.button( "f", "   Find file", ":Telescope find_files<CR>"),        
+  dashboard.button( "w", " 󰷾  Find text", ":Telescope live_grep <CR>"),
+  dashboard.button( "r", "   Recents", ":Telescope oldfiles<CR>"),
+  dashboard.button( "t", "   Themes", ":Telescope colorscheme<CR>"),
+  dashboard.button( "e", "   Explore", ":BrowseFiles<CR>"),
+  dashboard.button( "p", " 󰏗  Lazy", ":Lazy<CR>"),
+  dashboard.button( "m", "   Mason", ":Mason<CR>"),
+  dashboard.button( "q", "   Quit", ":qa<CR>"),
 }
 
 alpha.setup(dashboard.opts)
