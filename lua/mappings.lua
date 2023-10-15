@@ -1,7 +1,7 @@
 local keymap = vim.keymap
 
 -- Normal --
-- Lazy
+-- Lazy
 keymap.set("n", "<leader>p", "<cmd>Lazy<CR>")
 
 -- Mason
