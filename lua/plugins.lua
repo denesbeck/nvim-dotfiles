@@ -37,6 +37,9 @@ local plugins = {
     dependencies = { {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"} }
   },
 
+  -- Buffers
+  {"akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons"},
+
   -- Git
   "lewis6991/gitsigns.nvim",
 

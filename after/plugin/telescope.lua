@@ -47,6 +47,9 @@ telescope.load_extension("file_browser")
 telescope.load_extension("package_info")
 
 vim.keymap.set("n", "<leader>ff", function()
+  builtin.find_files()
+end)
+vim.keymap.set("n", "<leader>fF", function()
   builtin.find_files { hidden = true, no_ignore = true }
 end)
 vim.keymap.set("n", "<leader>fw", function()
