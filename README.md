@@ -1,28 +1,33 @@
 # nvim-dotfiles
 
 ## Clean
-```
+
+``` bash
 rm -rf ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim ~/.cache/nvim
 ```
 
 ## Install
-```
+
+``` bash
 git clone --depth 1 https://github.com/denesbeck/nvim-dotfiles.git ~/.config/nvim
 nvim
 ```
 
 ## Plugins
+
 [bottom](https://github.com/ClementTsang/bottom)\
 [exa](https://the.exa.website/)\
 [lazygit](https://github.com/jesseduffield/lazygit)\
 [ripgrep](https://github.com/BurntSushi/ripgrep)
 
 ## Additional setup
+
 [iTerm2 colorschemes](https://iterm2colorschemes.com/)\
 [Fish](https://fishshell.com/)\
 [Fisher](https://github.com/jorgebucaran/fisher)
 
 ### Fish plugins
+
 [ilancosman/tide@v5](https://github.com/IlanCosman/tide)\
 [jethrokuan/z](https://github.com/jethrokuan/z)\
 [jorgebucaran/nvm.fish](https://github.com/jorgebucaran/nvm.fish)\
@@ -30,7 +35,8 @@ nvim
 [patrickf1/fzf.fish](https://github.com/PatrickF1/fzf.fish)
 
 ### ~/.config/fish/config.fish
-```
+
+``` fish
 set fish_greeting ""
 
 # nvm setup
@@ -59,7 +65,8 @@ alias udt "brew update && brew upgrade && brew cleanup"
 ```
 
 ### ~/.config/tmux/tmux.conf
-```
+
+``` tmux
 set-option -sa terminal-overrides ",xterm*:Tc"
 set -g mouse on
 
