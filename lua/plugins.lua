@@ -1,106 +1,110 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  -- LSP
-  "williamboman/mason.nvim",
-  "williamboman/mason-lspconfig.nvim",
-  "neovim/nvim-lspconfig",
+	-- LSP
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
+	"neovim/nvim-lspconfig",
 
-  -- Theme
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-  },
-  
-  -- Status bar
-  "nvim-lualine/lualine.nvim",
+	-- Theme
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+	},
 
-  -- Fuzzy finder
-  {
-   "nvim-telescope/telescope.nvim", version = "0.1.2",
-   dependencies = { {"nvim-lua/plenary.nvim"} }
-  },
+	-- Status bar
+	"nvim-lualine/lualine.nvim",
 
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"} }
-  },
+	-- Fuzzy finder
+	{
+		"nvim-telescope/telescope.nvim",
+		version = "0.1.2",
+		dependencies = { { "nvim-lua/plenary.nvim" } },
+	},
 
-  -- Buffers
-  {"akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons"},
+	{
+		"nvim-telescope/telescope-file-browser.nvim",
+		dependencies = { { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" } },
+	},
 
-  -- Git
-  "lewis6991/gitsigns.nvim",
+	-- Buffers
+	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 
-  -- Syntax highlight
-  "nvim-treesitter/nvim-treesitter",
-  
-  -- Autoclose
-  "windwp/nvim-ts-autotag",
-  "windwp/nvim-autopairs",
+	-- Git
+	"lewis6991/gitsigns.nvim",
 
-  -- Autocomplete
-  -- Tailwind CSS
-  "js-everts/cmp-tailwind-colors",
-  
-  -- CMP 
-  "hrsh7th/nvim-cmp",
-  "hrsh7th/cmp-nvim-lsp",
-  "hrsh7th/cmp-buffer",
-  "hrsh7th/cmp-path",
-  "hrsh7th/cmp-cmdline",
-  "hrsh7th/cmp-vsnip",
-  "hrsh7th/vim-vsnip",
+	-- Syntax highlight
+	"nvim-treesitter/nvim-treesitter",
 
-  -- LSP Saga
-  "glepnir/lspsaga.nvim",
+	-- Autoclose
+	"windwp/nvim-ts-autotag",
+	"windwp/nvim-autopairs",
 
-  -- Copilot
-  "github/copilot.vim",
+	-- Autocomplete
+	-- Tailwind CSS
+	"js-everts/cmp-tailwind-colors",
 
-  -- Formatters
-  "jose-elias-alvarez/null-ls.nvim",
-  "MunifTanjim/prettier.nvim",
+	-- CMP
+	"hrsh7th/nvim-cmp",
+	"hrsh7th/cmp-nvim-lsp",
+	"hrsh7th/cmp-buffer",
+	"hrsh7th/cmp-path",
+	"hrsh7th/cmp-cmdline",
+	"hrsh7th/cmp-vsnip",
+	"hrsh7th/vim-vsnip",
 
-  -- Home screen
- {
-    "goolord/alpha-nvim",
-    config = function ()
-        require"alpha".setup(require"alpha.themes.dashboard".config)
-    end
-  },
-   
-  -- Comment
-  { 
-    "numToStr/Comment.nvim",
-    dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" }
-  },
+	-- LSP Saga
+	"glepnir/lspsaga.nvim",
 
-  -- Hardtime
-  {
-    "m4xshen/hardtime.nvim",
-    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-  },
+	-- Copilot
+	"github/copilot.vim",
 
-  -- NPM packages
-  "vuki656/package-info.nvim",
+	-- Formatters
+	{
+		"jose-elias-alvarez/null-ls.nvim",
+		dependencies = "nvim-lua/plenary.nvim",
+	},
+	"MunifTanjim/prettier.nvim",
 
-  -- Notification
-  "rcarriga/nvim-notify",
+	-- Home screen
+	{
+		"goolord/alpha-nvim",
+		config = function()
+			require("alpha").setup(require("alpha.themes.dashboard").config)
+		end,
+	},
 
-  -- Tmux navigator
-  "christoomey/vim-tmux-navigator",
+	-- Comment
+	{
+		"numToStr/Comment.nvim",
+		dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
+	},
+
+	-- Hardtime
+	-- {
+	-- 	"m4xshen/hardtime.nvim",
+	-- 	dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+	-- },
+
+	-- NPM packages
+	"vuki656/package-info.nvim",
+
+	-- Notification
+	-- "rcarriga/nvim-notify",
+
+	-- Tmux navigator
+	"christoomey/vim-tmux-navigator",
 }
 
 local opts = {}
