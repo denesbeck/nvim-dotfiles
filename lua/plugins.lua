@@ -72,7 +72,7 @@ local plugins = {
 		"jose-elias-alvarez/null-ls.nvim",
 		dependencies = "nvim-lua/plenary.nvim",
 	},
-	-- "MunifTanjim/prettier.nvim",
+	"MunifTanjim/prettier.nvim",
 
 	-- Home screen
 	{
