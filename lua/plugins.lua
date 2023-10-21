@@ -29,8 +29,8 @@ local plugins = {
 	-- Fuzzy finder
 	{
 		"nvim-telescope/telescope.nvim",
-		version = "0.1.2",
-		dependencies = { { "nvim-lua/plenary.nvim" } },
+		branch = "0.1.x",
+		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 
 	{
@@ -64,9 +64,6 @@ local plugins = {
 	"hrsh7th/cmp-vsnip",
 	"hrsh7th/vim-vsnip",
 
-	-- LSP Saga
-	"glepnir/lspsaga.nvim",
-
 	-- Copilot
 	"github/copilot.vim",
 
@@ -75,7 +72,7 @@ local plugins = {
 		"jose-elias-alvarez/null-ls.nvim",
 		dependencies = "nvim-lua/plenary.nvim",
 	},
-	"MunifTanjim/prettier.nvim",
+	-- "MunifTanjim/prettier.nvim",
 
 	-- Home screen
 	{
@@ -91,17 +88,8 @@ local plugins = {
 		dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
 	},
 
-	-- Hardtime
-	-- {
-	-- 	"m4xshen/hardtime.nvim",
-	-- 	dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-	-- },
-
 	-- NPM packages
 	"vuki656/package-info.nvim",
-
-	-- Notification
-	-- "rcarriga/nvim-notify",
 
 	-- Tmux navigator
 	"christoomey/vim-tmux-navigator",
