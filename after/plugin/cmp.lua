@@ -69,31 +69,16 @@ cmp.setup.cmdline(":", {
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 local lspconfig = require("lspconfig")
-lspconfig["tsserver"].setup({
-	capabilities = capabilities,
-})
-lspconfig["tailwindcss"].setup({
-	capabilities = capabilities,
-})
-lspconfig["lua_ls"].setup({
-	capabilities = capabilities,
-})
-lspconfig["gopls"].setup({
-	capabilities = capabilities,
-})
-lspconfig["yamlls"].setup({
-	capabilities = capabilities,
-})
-lspconfig["sqlls"].setup({
-	capabilities = capabilities,
-})
-lspconfig["rubocop"].setup({
-	capabilities = capabilities,
-})
-lspconfig["pyright"].setup({
+lspconfig["bashls"].setup({
 	capabilities = capabilities,
 })
 lspconfig["cssls"].setup({
+	capabilities = capabilities,
+})
+lspconfig["dockerls"].setup({
+	capabilities = capabilities,
+})
+lspconfig["gopls"].setup({
 	capabilities = capabilities,
 })
 lspconfig["html"].setup({
@@ -102,9 +87,24 @@ lspconfig["html"].setup({
 lspconfig["jsonls"].setup({
 	capabilities = capabilities,
 })
-lspconfig["dockerls"].setup({
+lspconfig["lua_ls"].setup({
 	capabilities = capabilities,
 })
-lspconfig["bashls"].setup({
+lspconfig["pyright"].setup({
+	capabilities = capabilities,
+})
+lspconfig["rubocop"].setup({
+	capabilities = capabilities,
+})
+lspconfig["sqlls"].setup({
+	capabilities = capabilities,
+})
+lspconfig["tailwindcss"].setup({
+	capabilities = capabilities,
+})
+lspconfig["tsserver"].setup({
+	capabilities = capabilities,
+})
+lspconfig["yamlls"].setup({
 	capabilities = capabilities,
 })
