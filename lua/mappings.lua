@@ -8,7 +8,7 @@ keymap.set("n", "<leader>p", "<cmd>Lazy<CR>")
 keymap.set("n", "<leader>m", "<cmd>Mason<CR>")
 
 -- Close buffer
-keymap.set("n", "<leader>c", "<cmd>bw<CR>")
+keymap.set("n", "<leader>cc", "<cmd>bw<CR>")
 
 -- Reset search highlight
 keymap.set("n", "//", "<cmd>nohlsearch<CR>")
