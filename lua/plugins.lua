@@ -64,6 +64,9 @@ local plugins = {
 	"hrsh7th/cmp-vsnip",
 	"hrsh7th/vim-vsnip",
 
+	-- LSP Saga
+	"glepnir/lspsaga.nvim",
+
 	-- Copilot
 	"github/copilot.vim",
 
