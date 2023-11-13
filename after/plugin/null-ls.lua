@@ -8,8 +8,11 @@ local sources = {
 	null_ls.builtins.formatting.goimports_reviser,
 	null_ls.builtins.formatting.prettierd,
 	null_ls.builtins.formatting.rustywind,
-	null_ls.builtins.formatting.shfmt,
+	null_ls.builtins.formatting.shfmt.with({
+		extra_args = { "-i", "2", "-ci" },
+	}),
 	null_ls.builtins.formatting.stylua,
+	null_ls.builtins.diagnostics.eslint_d,
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
