@@ -72,7 +72,7 @@ local plugins = {
 
 	-- Formatters
 	{
-		"jose-elias-alvarez/null-ls.nvim",
+		"nvimtools/none-ls.nvim",
 		dependencies = "nvim-lua/plenary.nvim",
 	},
 

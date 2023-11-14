@@ -1,22 +1,22 @@
-local ok, null_ls = pcall(require, "null-ls")
+local ok, none_ls = pcall(require, "null-ls")
 if not ok then
 	return
 end
 
 local sources = {
-	null_ls.builtins.formatting.gofumpt,
-	null_ls.builtins.formatting.goimports_reviser,
-	null_ls.builtins.formatting.prettierd,
-	null_ls.builtins.formatting.rustywind,
-	null_ls.builtins.formatting.shfmt.with({
+	none_ls.builtins.formatting.gofumpt,
+	none_ls.builtins.formatting.goimports_reviser,
+	none_ls.builtins.formatting.prettierd,
+	none_ls.builtins.formatting.rustywind,
+	none_ls.builtins.formatting.shfmt.with({
 		extra_args = { "-i", "2", "-ci" },
 	}),
-	null_ls.builtins.formatting.stylua,
-	null_ls.builtins.diagnostics.eslint_d,
+	none_ls.builtins.formatting.stylua,
+	none_ls.builtins.diagnostics.eslint_d,
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-null_ls.setup({
+none_ls.setup({
 	sources = sources,
 	-- you can reuse a shared lspconfig on_attach callback here
 	on_attach = function(client, bufnr)
