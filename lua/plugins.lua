@@ -95,6 +95,13 @@ local plugins = {
 
 	-- Tmux navigator
 	"christoomey/vim-tmux-navigator",
+
+	-- HardTime
+	{
+		"m4xshen/hardtime.nvim",
+		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+		opts = {},
+	},
 }
 
 local opts = {}
