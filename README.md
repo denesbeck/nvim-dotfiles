@@ -1,6 +1,7 @@
 # nvim-dotfiles
 <img width="1396" alt="nvim_screenshot_2" src="https://github.com/denesbeck/nvim-dotfiles/assets/85183401/98e9f003-a213-4a65-8762-9ecdfb87eff2">
 <img width="1396" alt="nvim_screenshot_1" src="https://github.com/denesbeck/nvim-dotfiles/assets/85183401/11d2507e-5acb-42a7-92b5-7dd144cc2911">
+<img width="1396" alt="nvim_screenshot_3" src="https://github.com/denesbeck/nvim-dotfiles/assets/85183401/f9a37051-c5ce-4f1f-b671-90e9e65c31bd">
 
 ## Clean
 
