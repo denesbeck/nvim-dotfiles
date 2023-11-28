@@ -1,37 +1,37 @@
-# nvim-dotfiles
+# 🚀 nvim-dotfiles
 NeoVim config inspired by [AstroNvim](https://github.com/AstroNvim/AstroNvim) and [devaslife](https://github.com/craftzdog/dotfiles-public).
 
-<img width="1396" alt="nvim_screenshot_2" src="https://github.com/denesbeck/nvim-dotfiles/assets/85183401/98e9f003-a213-4a65-8762-9ecdfb87eff2">
-<img width="1396" alt="nvim_screenshot_1" src="https://github.com/denesbeck/nvim-dotfiles/assets/85183401/11d2507e-5acb-42a7-92b5-7dd144cc2911">
-<img width="1396" alt="nvim_screenshot_3" src="https://github.com/denesbeck/nvim-dotfiles/assets/85183401/f9a37051-c5ce-4f1f-b671-90e9e65c31bd">
+![1](https://github.com/denesbeck/nvim-dotfiles/assets/85183401/f954bbed-e56e-40d0-8b2b-1e4053052959)
+![2](https://github.com/denesbeck/nvim-dotfiles/assets/85183401/eaba2c3a-6318-4a99-a8e0-30e547cda2ef)
+![3](https://github.com/denesbeck/nvim-dotfiles/assets/85183401/bee42f61-c1b8-4c33-8d75-5722ec8f86eb)
 
-## Clean
+## 🗑️ Clean
 
 ```bash
 rm -rf ~/.config/nvim ~/.local/share/nvim ~/.local/state/nvim ~/.cache/nvim
 ```
 
-## Install
+## 📦 Install
 
 ```bash
 git clone --depth 1 https://github.com/denesbeck/nvim-dotfiles.git ~/.config/nvim
 nvim
 ```
 
-## Plugins
+## ⚡ Tools & Plugins
+
+### General
 
 [bottom](https://github.com/ClementTsang/bottom)\
 [exa](https://the.exa.website/)\
 [lazygit](https://github.com/jesseduffield/lazygit)\
 [ripgrep](https://github.com/BurntSushi/ripgrep)
-
-## Additional setup
-
-[iTerm2 colorschemes](https://iterm2colorschemes.com/)\
 [Fish](https://fishshell.com/)\
-[Fisher](https://github.com/jorgebucaran/fisher)
+[Fisher](https://github.com/jorgebucaran/fisher)\
+[iTerm2](https://iterm2.com/)\
+[iTerm2 colorschemes](https://iterm2colorschemes.com/)\
 
-### Fish plugins
+###  Fisher plugins
 
 [ilancosman/tide@v5](https://github.com/IlanCosman/tide)\
 [jethrokuan/z](https://github.com/jethrokuan/z)\
@@ -39,6 +39,7 @@ nvim
 [rbenv/fish-rbenv](https://github.com/rbenv/fish-rbenv)\
 [patrickf1/fzf.fish](https://github.com/PatrickF1/fzf.fish)
 
+## 📁 Configs
 ### ~/.config/fish/config.fish
 
 ```fish
