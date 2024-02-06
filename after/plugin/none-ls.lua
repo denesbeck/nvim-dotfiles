@@ -7,6 +7,7 @@ local sources = {
 	none_ls.builtins.formatting.gofumpt,
 	none_ls.builtins.formatting.goimports_reviser,
 	none_ls.builtins.formatting.prettierd,
+	none_ls.builtins.formatting.rubocop,
 	none_ls.builtins.formatting.rustywind,
 	none_ls.builtins.formatting.shfmt.with({
 		extra_args = { "-i", "2", "-ci" },
