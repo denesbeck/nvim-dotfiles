@@ -13,7 +13,6 @@ local sources = {
 		extra_args = { "-i", "2", "-ci" },
 	}),
 	none_ls.builtins.formatting.stylua,
-	none_ls.builtins.diagnostics.eslint_d,
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -33,5 +32,14 @@ none_ls.setup({
 				end,
 			})
 		end
+	end,
+})
+require("lspconfig").eslint.setup({
+	--- ...
+	on_attach = function(client, bufnr)
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			buffer = bufnr,
+			command = "EslintFixAll",
+		})
 	end,
 })
